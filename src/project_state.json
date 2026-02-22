@@ -1,0 +1,157 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "Marketplace MVP for selling digital art, physical products, IC-native NFTs, and craft items. Core features: bulk upload (images, 3D models, audio files creating separate items), item listings, mock payment system, artist profiles with transaction fees paid by artists.",
+  "architectural_notes": [
+    "MVP marketplace for multiple item types: digital art, physical products, IC-native NFTs, craft items",
+    "Bulk upload creates separate items for each file (images, 3D models, audio)",
+    "Mock payment system for MVP phase (not real payment integration)",
+    "Transaction fees deducted from artist sales",
+    "Simple UI with minimal customization options",
+    "No AI-generated descriptions or auto-marketplace posting in MVP"
+  ],
+  "known_issues": [
+    "User creation fails with 'failed to create user' error during signup and login after Version 2 deployment"
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-implement-bulk-file-upload-system-supporting-images-png-jpg-jpeg-gif-webp-3d-models-glb-gltf-and-audio-files-mp3-wav-ogg-each-uploaded-file-must-create-a-separate-item-listing-automatically",
+      "title": "Implement bulk file upload system supporting images (PNG, JPG, JPEG, GIF, WEBP), 3D models (GLB, GLTF), and audio files (MP3, WAV, OGG). Each uploaded file must create a separate item listing automatically.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-item-listing-management-system-supporting-four-categories-digital-art-physical-products-nfts-ic-native-tokens-and-craft-items-each-listing-must-include-title-description-price-category-file-reference-and-artist-identity",
+      "title": "Create item listing management system supporting four categories: digital art, physical products, NFTs (IC-native tokens), and craft items. Each listing must include title, description, price, category, file reference, and artist identity.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-mock-payment-system-allowing-buyers-to-purchase-items-directly-track-purchase-history-apply-transaction-fees-to-artists-and-update-item-ownership-status-upon-successful-payment",
+      "title": "Implement mock payment system allowing buyers to purchase items directly. Track purchase history, apply transaction fees to artists, and update item ownership status upon successful payment.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-artist-profile-pages-displaying-artist-information-portfolio-of-listed-items-and-sales-history-artists-must-be-able-to-edit-their-own-profile-information",
+      "title": "Create artist profile pages displaying artist information, portfolio of listed items, and sales history. Artists must be able to edit their own profile information.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-internet-identity-authentication-so-users-can-log-in-as-buyers-or-artists-with-role-based-access-control-for-creating-listings-versus-purchasing-items",
+      "title": "Implement Internet Identity authentication so users can log in as buyers or artists, with role-based access control for creating listings versus purchasing items.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-clean-minimal-marketplace-interface-with-modern-aesthetics-using-a-warm-earthy-color-palette-terracotta-sage-green-cream-soft-brown-tones-that-reflects-artisan-craftsmanship-apply-consistent-typography-generous-whitespace-and-card-based-layouts-for-item-browsing",
+      "title": "Design a clean, minimal marketplace interface with modern aesthetics using a warm, earthy color palette (terracotta, sage green, cream, soft brown tones) that reflects artisan craftsmanship. Apply consistent typography, generous whitespace, and card-based layouts for item browsing.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-bulk-image-upload-process-in-uploadpage-tsx-to-prevent-the-progress-bar-from-getting-stuck-and-the-page-from-freezing-implement-proper-async-file-processing-with-chunking-or-throttling-to-avoid-blocking-the-ui-thread-during-large-file-uploads",
+      "title": "Fix the bulk image upload process in UploadPage.tsx to prevent the progress bar from getting stuck and the page from freezing. Implement proper async file processing with chunking or throttling to avoid blocking the UI thread during large file uploads.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-error-handling-and-recovery-mechanisms-for-failed-image-uploads-in-uploadpage-tsx-display-specific-error-messages-if-uploads-fail-and-allow-users-to-retry-individual-failed-uploads-without-restarting-the-entire-batch",
+      "title": "Add error handling and recovery mechanisms for failed image uploads in UploadPage.tsx. Display specific error messages if uploads fail and allow users to retry individual failed uploads without restarting the entire batch.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-optimize-file-reading-and-blob-conversion-logic-in-uploadpage-tsx-to-process-images-efficiently-implement-background-processing-or-web-workers-if-necessary-to-prevent-blocking-the-main-ui-thread-during-file-conversion-to-uint8array-format",
+      "title": "Optimize file reading and blob conversion logic in UploadPage.tsx to process images efficiently. Implement background processing or Web Workers if necessary to prevent blocking the main UI thread during file conversion to Uint8Array format.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-proper-error-logging-and-user-friendly-error-messages-to-the-user-creation-and-authentication-flow-so-that-if-user-creation-fails-the-specific-cause-is-displayed-to-help-diagnose-future-issues",
+      "title": "Add proper error logging and user-friendly error messages to the user creation and authentication flow so that if user creation fails, the specific cause is displayed to help diagnose future issues.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Bulk upload system for images, 3D models, and audio files (each file creates separate item)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Item listing creation and management for digital art, physical products, NFTs, and craft items",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Mock payment system for direct item purchases",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Artist profile pages",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "IC-native NFT token functionality for blockchain collectibles",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Transaction fee system (artists pay fees)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Implement IC-native NFT token functionality for items marked as NFTs. Create unique token IDs for NFT items and track ownership on-chain using Internet Computer standards.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Fix the 'failed to create user' error that occurs during signup and login after Version 2 deployment. Investigate and resolve backend user creation logic in main.mo to ensure new users can be successfully created and authenticated users can properly load their profiles.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Artisan Marketplace",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

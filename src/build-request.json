@@ -1,0 +1,60 @@
+{
+  "kind": "build_request",
+  "title": "Fix user creation failure after Version 2 deployment",
+  "projectName": "Artisan Marketplace",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-11",
+      "text": "Fix the 'failed to create user' error that occurs during signup and login after Version 2 deployment. Investigate and resolve backend user creation logic in main.mo to ensure new users can be successfully created and authenticated users can properly load their profiles.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "error pop up says failed to create user",
+          "after version2 deployment"
+        ]
+      },
+      "acceptanceCriteria": [
+        "New users can successfully sign up without receiving a 'failed to create user' error",
+        "Existing users can log in and load their profiles without errors",
+        "ProfileSetupModal appears correctly for authenticated users without profiles",
+        "User creation and profile loading work consistently across multiple authentication attempts"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Add proper error logging and user-friendly error messages to the user creation and authentication flow so that if user creation fails, the specific cause is displayed to help diagnose future issues.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-last"
+        ],
+        "quotes": [
+          "failed to create user"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend logs specific error details when user creation fails",
+        "Frontend displays clear, actionable error messages instead of generic 'failed to create user' message",
+        "Error messages distinguish between network issues, backend failures, and authentication problems"
+      ]
+    }
+  ],
+  "constraints": [
+    "Preserve existing Internet Identity authentication integration",
+    "Maintain single-actor backend architecture",
+    "Do not modify frontend/src/hooks/useInternetIdentity.ts or frontend/src/hooks/useActor.ts"
+  ],
+  "nonGoals": [
+    "Adding new authentication providers beyond Internet Identity",
+    "Changing the user profile data structure",
+    "Modifying the ProfileSetupModal UI or flow"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

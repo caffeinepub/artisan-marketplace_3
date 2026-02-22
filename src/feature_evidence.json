@@ -1,0 +1,27 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-proper-error-logging-and-user-friendly-error-messages-to-the-user-creation-and-authentication-flow-so-that-if-user-creation-fails-the-specific-cause-is-displayed-to-help-diagnose-future-issues",
+      "featureTitle": "Add proper error logging and user-friendly error messages to the user creation and authentication flow so that if user creation fails, the specific cause is displayed to help diagnose future issues.",
+      "files": [
+        "frontend/src/components/LoginButton.tsx",
+        "frontend/src/components/ProfileSetupModal.tsx",
+        "frontend/src/hooks/useQueries.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

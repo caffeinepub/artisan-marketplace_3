@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.5rem;
+        /* Warm earthy palette - Light mode */
+        --background: 0.98 0.02 60;  /* Cream */
+        --foreground: 0.35 0.04 40;  /* Soft brown */
+        --card: 1 0.01 60;
+        --card-foreground: 0.35 0.04 40;
+        --popover: 1 0.01 60;
+        --popover-foreground: 0.35 0.04 40;
+        --primary: 0.62 0.12 35;  /* Terracotta */
+        --primary-foreground: 0.98 0.02 60;
+        --secondary: 0.68 0.08 130;  /* Sage green */
+        --secondary-foreground: 0.98 0.02 60;
+        --muted: 0.92 0.02 60;
+        --muted-foreground: 0.55 0.03 40;
+        --accent: 0.68 0.08 130;  /* Sage green */
+        --accent-foreground: 0.98 0.02 60;
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0.02 60;
+        --border: 0.88 0.02 60;
+        --input: 0.88 0.02 60;
+        --ring: 0.62 0.12 35;
+        --chart-1: 0.62 0.12 35;
+        --chart-2: 0.68 0.08 130;
+        --chart-3: 0.55 0.08 45;
+        --chart-4: 0.72 0.06 100;
+        --chart-5: 0.58 0.10 50;
+    }
+
+    .dark {
+        --background: 0.25 0.04 40;  /* Dark brown */
+        --foreground: 0.95 0.02 60;  /* Light cream */
+        --card: 0.30 0.04 40;
+        --card-foreground: 0.95 0.02 60;
+        --popover: 0.30 0.04 40;
+        --popover-foreground: 0.95 0.02 60;
+        --primary: 0.65 0.12 35;  /* Lighter terracotta */
+        --primary-foreground: 0.25 0.04 40;
+        --secondary: 0.60 0.08 130;  /* Muted sage */
+        --secondary-foreground: 0.95 0.02 60;
+        --muted: 0.35 0.04 40;
+        --muted-foreground: 0.70 0.03 60;
+        --accent: 0.60 0.08 130;
+        --accent-foreground: 0.95 0.02 60;
+        --destructive: 0.58 0.22 25;
+        --destructive-foreground: 0.95 0.02 60;
+        --border: 0.40 0.04 40;
+        --input: 0.40 0.04 40;
+        --ring: 0.65 0.12 35;
+        --chart-1: 0.65 0.12 35;
+        --chart-2: 0.60 0.08 130;
+        --chart-3: 0.58 0.08 45;
+        --chart-4: 0.65 0.06 100;
+        --chart-5: 0.60 0.10 50;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: 600;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}

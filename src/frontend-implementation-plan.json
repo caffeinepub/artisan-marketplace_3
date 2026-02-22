@@ -1,0 +1,42 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Fix user creation failure after Version 2 deployment",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "summary": "Add proper error logging and user-friendly error messages to the user creation and authentication flow on the frontend",
+      "acceptanceCriteria": [
+        "Frontend displays clear, actionable error messages instead of generic 'failed to create user' message",
+        "Error messages distinguish between network issues, backend failures, and authentication problems"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Enhance useSaveCallerUserProfile mutation to include detailed error handling with specific error messages for network failures, backend traps, and other issues. Add error logging to console with full error details including error type, message, and stack trace. Improve error state management to provide actionable feedback to users."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add error logging to useGetCallerUserProfile query to catch and log profile fetch failures with context about authentication state. Include retry logic configuration and detailed error messages for debugging profile loading issues."
+        },
+        {
+          "path": "frontend/src/components/ProfileSetupModal.tsx",
+          "operation": "modify",
+          "description": "Replace generic toast error messages with specific, user-friendly error messages based on error type. Add error state display showing detailed error information when profile creation fails. Include guidance for users on potential resolution steps (check connection, try again, contact support). Add error boundary handling for unexpected errors during profile setup."
+        },
+        {
+          "path": "frontend/src/components/LoginButton.tsx",
+          "operation": "modify",
+          "description": "Enhance error handling in handleAuth to log detailed authentication errors with error type classification (login failure, logout failure, state conflicts). Add user-friendly error toast notifications with specific messages for different failure scenarios. Improve error recovery flow for authentication state conflicts."
+        },
+        {
+          "path": "frontend/src/hooks/useActor.ts",
+          "operation": "modify",
+          "description": "Add detailed logging for actor initialization failures including authentication state, identity details, and backend connection status. Log access control initialization results to help diagnose backend setup issues. Add error boundaries for actor creation failures with fallback behavior."
+        }
+      ]
+    }
+  ]
+}
